@@ -18,5 +18,13 @@
     <ClCompile Include="SnakesAndLadders.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="board%27n%27players.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="board%27n%27players.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
