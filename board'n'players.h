@@ -1,5 +1,6 @@
 #pragma once
 
+#include "dice.h"
 #include <string>
 #include <vector>
 
@@ -9,34 +10,30 @@ using namespace std;
 class object {
 public:
 	int start, end;
-	friend void display(vector<object>&);
 	object(int s, int e) :start(s), end(e) {}
+	friend ostream& operator<<(ostream& ost, const object& i);
 };
 
-class DICE {
-public:
-	static int sides;//max value on dice. Default 6.
-	int roll();
-};
-
+//stores data of player.
 class PLAYER {
 public:
 	int score, number;
 	string name;
 	PLAYER(string n, int s, int no) :name(n), score(s), number(no) {}
+	friend ostream& operator<<(ostream& ost,const PLAYER& i);
 };
 
 class BOARD {
-	vector<object> ladder, snake;
+	vector<object> ladder, snake;//create object snakes and ladders.
 	void snakes();//initialises snakes
 	void ladders();//initialises ladders
 	void init_players(); //initialises players and places them on board(user input)
 
 public:
 	//return vector snake;
-	vector<object> Snakes() { return snake; }
+	vector<object> return_Snakes() { return snake; }
 	//return vector ladder;
-	vector<object> Ladders() { return ladder; }
+	vector<object> return_Ladders() { return ladder; }
 
 
 	DICE dice;//6 sided(default) dice
@@ -60,7 +57,7 @@ public:
 	void show_info();
 
 	//Display positions of all the snakes/ladders;
-	void display(vector<object>&);
+	void display(vector<object>);
 
 	//shows result 
 	void show_result();

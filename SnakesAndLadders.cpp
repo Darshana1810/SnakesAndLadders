@@ -17,7 +17,7 @@ void turn(BOARD& board) {
 		do	{
 			cin >> opt;	
 			switch (opt) {
-			case 'r':
+			case 'r': {
 				int x = board.dice.roll();
 				cout << "You have rolled : " << x << endl;
 
@@ -34,14 +34,15 @@ void turn(BOARD& board) {
 					board.players.erase(board.players.begin() + i);
 				}
 				return;
+			}
 			case 'p':
 				board.show_info();
 				break;
 			case 's':
-				board.display(board.Snakes);
+				board.display(board.return_Snakes());
 				break;
 			case 'l':
-				board.display(board.Ladders);
+				board.display(board.return_Ladders());
 			default:
 				cout << "Invalid Input.-_-" << endl << "Try again^-^" << endl;
 			}

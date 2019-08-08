@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="dice.cpp" />
     <ClCompile Include="SnakesAndLadders.cpp" />
     <ClCompile Include="board%27n%27players.cpp" />
   </ItemGroup>

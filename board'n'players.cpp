@@ -1,17 +1,25 @@
 #include "board'n'players.h"
-#include <ctime>
 #include <vector>
 #include <iostream>
 
+
 using namespace std;
 
-int DICE::sides = 6;
+ostream& operator<<(ostream& ost,const PLAYER& i) {
+	ost.width(11);
+	ost << i.name;
+	ost.width(5);
+	ost<< i.score;
+	return ost;
+}
 
-int DICE::roll() {
-	srand((unsigned)time(0));
-	int rolled = rand() % sides + 1;
-	return rolled;
-};
+ostream& operator<<(ostream& ost, const object& i) {
+	ost.width(8);
+	ost << i.start;
+	ost.width(5);
+	ost << i.end;
+	return ost;
+}
 
 void BOARD::snakes() {
 	snake.push_back(object(21, 15));
@@ -77,9 +85,16 @@ void BOARD::show_result() {
 	}
 }
 
-void BOARD::display(vector<object>& T) {
-	cout << "Start | End" << endl;
+void BOARD::display(vector<object> T) {
+	cout << " Start | End" << endl;
 	for (object& i : T) {
-		cout << "  " << i.start << " " << "   " << i.end << endl;
+		cout << i << endl;
+	}
+}
+
+void BOARD::show_info() {
+	cout << "   Name   | Score" << endl;
+	for (PLAYER& i : players) {
+		cout << i << endl;
 	}
 }
