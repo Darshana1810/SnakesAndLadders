@@ -1,25 +1,7 @@
 #include "board'n'players.h"
+
 #include <vector>
 #include <iostream>
-
-
-using namespace std;
-
-ostream& operator<<(ostream& ost,const PLAYER& i) {
-	ost.width(11);
-	ost << i.name;
-	ost.width(5);
-	ost<< i.score;
-	return ost;
-}
-
-ostream& operator<<(ostream& ost, const object& i) {
-	ost.width(8);
-	ost << i.start;
-	ost.width(5);
-	ost << i.end;
-	return ost;
-}
 
 void BOARD::snakes() {
 	snake.push_back(object(21, 15));
@@ -48,6 +30,7 @@ void BOARD::ladders() {
 }
 
 int BOARD::new_position(int pos) {
+	//check for snake
 	for (object i : snake)
 		if (pos == i.start) {
 			pos = i.end;
@@ -55,6 +38,8 @@ int BOARD::new_position(int pos) {
 			cout << "New position " << i.end << endl;
 		}
 	cout << "Snake not present at " << pos << endl;
+
+	//check for ladder
 	for (object i : ladder)
 		if (pos == i.start) {
 			pos = i.end;
@@ -65,15 +50,13 @@ int BOARD::new_position(int pos) {
 	return pos;
 }
 
-void BOARD::init_players(){
+void BOARD::init_players() {
 	int number;
 	cout << "Enter Number of players(2-8): ";
 	cin >> number;
+	//players.resize(8);
 	for (int i = 0; i < number; i++) {
-		string name;
-		cout << "Enter Player " << i + 1 << "'s name";
-		cin >> name;
-		players.push_back(PLAYER(name, 0, i + 1));
+		players.push_back(input(i + 1));
 	}
 }
 

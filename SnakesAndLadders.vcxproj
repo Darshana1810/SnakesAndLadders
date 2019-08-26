@@ -151,12 +151,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="board_objects.cpp" />
     <ClCompile Include="dice.cpp" />
+    <ClCompile Include="players_info.cpp" />
     <ClCompile Include="SnakesAndLadders.cpp" />
     <ClCompile Include="board%27n%27players.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board%27n%27players.h" />
+    <ClInclude Include="board_objects.h" />
+    <ClInclude Include="dice.h" />
+    <ClInclude Include="players_info.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

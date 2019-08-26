@@ -12,8 +12,8 @@ int DICE::roll() {
 
 DICE::DICE(int s) {
 	if (s >= 1) {
-		if (s == 1)	throw 1011;
-		if (s > 25) throw 1012;
+		if (s == 1)	throw 1011;//NI
+		if (s > 25) throw 1012;//NI
 		sides = s;
 		cout << sides << " Sided dice has bee created";
 	}

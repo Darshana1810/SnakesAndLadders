@@ -24,9 +24,24 @@
     <ClCompile Include="dice.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="players_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="board_objects.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="board%27n%27players.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="players_info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="board_objects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
