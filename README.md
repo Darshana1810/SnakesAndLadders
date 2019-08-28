@@ -1,3 +1,3 @@
 # SnakesAndLadders
-Snakes and Ladders game
-Written in C++
+Snakes and Ladders game written in C++. 
+Terminal/Console based game. 
